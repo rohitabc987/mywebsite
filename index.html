@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the latest movies and download them in 4k HD quality. Get access to a wide range of movie collections.">
+    <meta name="keywords"
+        content="javan movie full download in hd,javan full movie play,latest movies,download latest action movie, movie downloads, 4k HD movies, watch movies online, movie collections, entertainment, movie streaming">
+
+    <!-- for search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- for play icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+
+    <title>Latteest Movies</title>
+
+    <!-- link css -->
+    <link rel="stylesheet" type="text/css" href="./movie.css">
+
+
+</head>
+
+<body>
+    <div class="top">
+        <!-- title -->
+        <h1 class="title"><span><u>Lateest Movies</u></span></h1>
+
+
+        <!-- nav bar -->
+        <!-- >>> -->
+        <nav class="navbar">
+            <div class="left" id="navbar_elements">
+                <ul class="nav_element">
+                    <!-- nav button -->
+                    <li><a class="active" href="">Home </a></li>
+                    <li><a href=""> Web Series</a></li>
+                    <li><a href="">TV Shows</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+            <form class="form">
+                <input class="sbutton" id="search" onkeyup="searchMovies()" onclick="search_size(this)" type="text"
+                    placeholder="Search.. Movie" name="search">
+                <i class="fa fa-search search_icon"></i>
+                <i class='bx bxs-microphone mike_icon' onclick="mike()"></i>
+            </form>
+        </nav>
+
+
+        <!-- automatic slider -->
+        <!-- >>> -->
+        <div class="slideshow-container" id="show">
+
+            <!-- black adam -->
+            <div class="mySlides fade">
+                <img class="slide" src="thumbnail\blackadam.jpg" style="width:100%">
+                <div class="slide-button">
+                    <!-- <i class='bx bx-play play-button'></i> -->
+                    <button class="watch-button" onclick="watchmovie(this)">Watch Now</button></a>
+                </div>
+            </div>
+
+            <!-- gadar 2 thumbnail -->
+            <div class="mySlides fade">
+                <img class="slide" src="thumbnail\gadar2slide.jpg" style="width:100%">
+                <div class="slide-button">
+                    <!-- <i class='bx bx-play play-button'></i> -->
+                    <button class="watch-button"
+                        onclick="watchmovie('https://www.veed.io/embed/14443618-d6a3-4f15-ac35-179a80787b6c')">Watch
+                        Now</button></a>
+                </div>
+            </div>
+
+            <!-- animal -->
+            <div class="mySlides fade">
+                <img class="slide" src="thumbnail\animalslide.jpg" style="width:100%">
+                <div class="slide-button">
+                    <!-- <i class='bx bx-play play-button'></i>  -->
+                    <button class="watch-button" onclick="watchmovie(this)">Watch Now</button></a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- message box if movie not found -->
+        <p id="searchMessage" class="message" style="display: none;"></p>
+
+        <!-- refresh button if movie not found -->
+        <div class="refresh">
+            <button id="refreshButton" onclick="refreshPage()" style="display: none;">Refresh</button>
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN CONTENT  -->
+    <main class="main" id="main_movie_container">
+
+        <!-- list of categorised movies -->
+        <div class="listofmovies" id="listofmovies">
+
+            <!-- newrelase Movies 2024 -->
+            <div class="diffrent-list">
+                <h2 class="listname">New Release 2024</h2>
+                <div id="newrelaseMovies2024" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(newrelaseMovies2024)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(newrelaseMovies2024)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- Southindian Movies List -->
+            <div class="diffrent-list">
+                <h2 class="listname">South Indian Movies</h2>
+                <div id="southindianMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(southindianMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(southindianMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- hindi Movies List -->
+            <div class="diffrent-list">
+                <h2 class="listname">Hindi Movies</h2>
+                <div id="hindiMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(hindiMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(hindiMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- Action Thriller Movies -->
+            <div class="diffrent-list">
+                <h2 class="listname">Action Thriller Movies</h2>
+                <div id="actionthrillerMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(actionthrillerMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(actionthrillerMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!--suspensefull Movies List -->
+            <div class="diffrent-list">
+                <h2 class="listname">Suspensefull Movies</h2>
+                <div id="suspensefullMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(suspensefullMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(suspensefullMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!--Romantic Movies  -->
+            <div class="diffrent-list">
+                <h2 class="listname">Romantic Movies</h2>
+                <div id="romanticmovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(romanticmovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(romanticmovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- comedy Movies -->
+            <div class="diffrent-list">
+                <h2 class="listname">Comedy Movies</h2>
+                <div id="comedyMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(comedyMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(comedyMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- horror Movies -->
+            <div class="diffrent-list">
+                <h2 class="listname">Horror Movies</h2>
+                <div id="horrorMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(horrorMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(horrorMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+
+            <!-- other movies -->
+            <div class="diffrent-list">
+                <h2 class="listname">Other Popular Movies</h2>
+                <div id="otherMovies" class="movies-list"></div>
+                <div class="arrow_container">
+                    <i onclick="scrolldiv_left(otherMovies)" class='bx bx-chevron-right right_arrow'></i>
+                    <i onclick="scrolldiv_right(otherMovies)" class='bx bx-chevron-left left_arrow'></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- for showing available movies -->
+        <div class="search_available_movies" id="available_movies"></div>
+
+        <!-- for showing related movies -->
+        <div id="related_movie_container">
+            <div class="show_related_movies" id="relatedMovies"></div>
+        </div>
+
+        <!-- MOVIES CONTENT -->
+        <!-- >>> -->
+
+        <!--  -->
+        <div onclick="watchmovie('https://www.veed.io/embed/f11dda26-d182-4370-a58a-47eba8007ca7')" class="pictures 2024 hindiMovies ">
+            <img class="img" src="" alt="" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"> Tamil</h2>
+            <a href="https://www.veed.io/embed/f11dda26-d182-4370-a58a-47eba8007ca7" class="link" style="display: none;"></a>
+        </div>
+
+        <!--  -->
+        <div onclick="watchmovie('https://www.veed.io/embed/0a92c639-984d-4e9b-9206-715aad5bf21e')" class="pictures 2024 hindiMovies ">
+            <img class="img" src="" alt="" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"> Unstoppable</h2>
+            <a href="https://www.veed.io/embed/0a92c639-984d-4e9b-9206-715aad5bf21e" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Banaras -->
+        <div onclick="watchmovie('https://www.veed.io/embed/7c15f820-6967-4be0-930f-401f350518d8')" class="pictures 2024 southindian ">
+            <img class="img" src="thumbnail/Banaras.webp" alt="Banaras" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Banaras </h2>
+            <a href="https://www.veed.io/embed/7c15f820-6967-4be0-930f-401f350518d8" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Saindhav -->
+        <div onclick="watchmovie('https://www.veed.io/embed/5700abd0-866f-4f99-b457-fbd3e9488305')" class="pictures 2024 southindian ">
+            <img class="img" src="thumbnail/Saindhav.jpg" alt="Saindhav" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Saindhav </h2>
+            <a href="https://www.veed.io/embed/5700abd0-866f-4f99-b457-fbd3e9488305" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Guntur-Kaaram -->
+        <div onclick="watchmovie('https://www.veed.io/embed/a3515bc7-e900-421e-acb8-e792a25ba1b5')" class="pictures 2024 southindian ">
+            <img class="img" src="thumbnail/Guntur-Kaaram.jpg" alt="Guntur-Kaaram" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Guntur-Kaaram </h2>
+            <a href="https://www.veed.io/embed/a3515bc7-e900-421e-acb8-e792a25ba1b5" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Rdx -->
+        <div onclick="watchmovie('https://www.veed.io/embed/8fb1f787-5539-40ed-9125-0a95f476f116')"
+            class="pictures 2024 Southindian ">
+            <img class="img" src="thumbnail/Rdx.jpg" alt="Rdx" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Rdx </h2>
+            <a href="https://www.veed.io/embed/8fb1f787-5539-40ed-9125-0a95f476f116" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--The-Beekeeper-->
+        <div onclick="watchmovie('https://www.veed.io/embed/f9bd2c4c-b17a-4220-adde-4b0fd9a3b65c')" class="pictures 2024">
+            <img class="img" src="thumbnail/Beekeeper.jpeg" alt="The-Beekeeper" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">The-Beekeeper</h2>
+            <a href="https://www.veed.io/embed/f9bd2c4c-b17a-4220-adde-4b0fd9a3b65c" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Merry-Christmas -->
+        <div onclick="watchmovie('https://www.veed.io/embed/a0f8738c-6535-472c-9c52-7ccf33a52319')"
+            class="pictures 2024 hindiMovies ">
+            <img class="img" src="thumbnail/merry-christmas.jpg" alt="Merry-Christmas" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Merry-Christmas </h2>
+            <a href="https://www.veed.io/embed/a0f8738c-6535-472c-9c52-7ccf33a52319" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Lift -->
+        <div onclick="watchmovie('https://www.veed.io/embed/66202483-73d7-418b-a199-bfee18631a43')"
+            class="pictures 2024 suspensefullMovies ">
+            <img class="img" src="thumbnail/Lift.jpg" alt="Lift" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Lift </h2>
+            <a href="https://www.veed.io/embed/66202483-73d7-418b-a199-bfee18631a43" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Hanuman -->
+        <div onclick="watchmovie('https://www.veed.io/embed/b23b1296-f0e7-4262-86fd-b23741bbb795')"
+            class="pictures 2024 southindian ">
+            <img class="img" src="thumbnail/hanuman.jpg" alt="Hanuman" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Hanuman </h2>
+            <a href="https://www.veed.io/embed/b23b1296-f0e7-4262-86fd-b23741bbb795" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- captain miller -->
+        <div onclick="watchmovie('https://www.veed.io/embed/5f7eb202-d877-4250-88b0-4a019341535f')"
+            class="pictures 2024 southindian ">
+            <img class="img" src="thumbnail/captian-miller.jpg" alt="Captian-Miller" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Captian-Miller </h2>
+            <a href="https://www.veed.io/embed/5f7eb202-d877-4250-88b0-4a019341535f" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Bawwal-->
+        <div onclick="watchmovie('https://www.veed.io/embed/bc1b8676-4bec-4739-9140-c156cb315fb8')" class="pictures 2024 romanticmovies">
+            <img class="img" src="thumbnail/Bawwal.jpg" alt="Bawwal" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Bawwal</h2>
+            <a href="https://www.veed.io/embed/bc1b8676-4bec-4739-9140-c156cb315fb8" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- 12th-Fail -->
+        <div onclick="watchmovie('https://www.veed.io/embed/fbfae68f-e3c9-4983-977f-44130b72203f')"
+            class="pictures 2024 hindiMovies">
+            <img class="img" src="thumbnail/12th-Fail.jpeg" alt="12th-Fail" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">12th-Fail</h2>
+            <a href="https://www.veed.io/embed/fbfae68f-e3c9-4983-977f-44130b72203f" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Hi-Nanna  -->
+        <div onclick="watchmovie('https://www.veed.io/embed/f7ddc17a-1c1e-4731-b265-72c73586d001')"
+            class="pictures 2024 hindiMovies ">
+            <img class="img" src="thumbnail/Hi-Nanna.jpg" alt="Hi-Nanna" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Hi-Nanna </h2>
+            <a href="https://www.veed.io/embed/f7ddc17a-1c1e-4731-b265-72c73586d001" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Tiger-3 -->
+        <div onclick="watchmovie('https://www.veed.io/embed/ae585a2e-e58d-4736-9457-7083734e90a0')"
+            class="pictures 2023  suspensefullMovies">
+            <img class="img" src="thumbnail/tiger3.jpg" alt="Tiger-3" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Tiger-3</h2>
+            <a href="https://www.veed.io/embed/ae585a2e-e58d-4736-9457-7083734e90a0" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- furky-3 -->
+        <div onclick="watchmovie('https://www.veed.io/embed/4d4df545-d603-448f-86e0-be03f97659d2')"
+            class="pictures 2023 hindiMovies">
+            <img class="img" src="thumbnail/furky-3.jpg" alt="Furky-3" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Furky-3</h2>
+            <a href="https://www.veed.io/embed/4d4df545-d603-448f-86e0-be03f97659d2" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Misson Raniganj -->
+        <div onclick="watchmovie('https://www.veed.io/embed/2f6ea95f-af02-45d8-a328-0982ce6c9074')"
+            class="pictures 2023 actionthrillerMovies">
+            <img class="img" src="thumbnail/mission-raniganj.jpg" alt="Misson Raniganj" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Misson Raniganj</h2>
+            <a href="https://www.veed.io/embed/2f6ea95f-af02-45d8-a328-0982ce6c9074" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- jawan - Bollywood -->
+        <div onclick="watchmovie('https://www.veed.io/embed/4a97a7a3-5f17-4f32-b9e8-03f8396438d5')"
+            class="pictures 2023 suspensefullMovies">
+            <img class="img" src="thumbnail/jawan.jpg" alt="Jawan" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Jawan </h2>
+            <a href="https://www.veed.io/embed/4a97a7a3-5f17-4f32-b9e8-03f8396438d5" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- gadar 2 -->
+        <div onclick="watchmovie('https://www.veed.io/embed/14443618-d6a3-4f15-ac35-179a80787b6c')"
+            class="pictures  2023 hindiMovies">
+            <img class="img" src="thumbnail\gadar2.jpg" alt="Gadar 2" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Gadar-2</h2>
+            <a href="https://www.veed.io/embed/14443618-d6a3-4f15-ac35-179a80787b6c" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- omg 2 -->
+        <div onclick="watchmovie('https://www.veed.io/embed/390142a0-a64b-43f1-adf3-732f440962c1')"
+            class="pictures 2023 hindiMovies">
+            <img class="img" src="thumbnail\omg2.jpg" alt="OMG-2" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Omg-2</h2>
+            <a href="https://www.veed.io/embed/390142a0-a64b-43f1-adf3-732f440962c1" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- kgf 2 -->
+        <div onclick="watchmovie(this)" class="pictures southindian 2023">
+            <img class="img" src="thumbnail/kgfchapter2.jpg" alt="Kgf Chapter 2" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">kgf-2</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- pushpa -->
+        <div onclick="watchmovie(this)" class="pictures southindian">
+            <img class="img" src="thumbnail\pushpa.jpg" alt="Pushpa" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Pushpa</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Ek-Tha-Tiger -->
+        <div onclick="watchmovie('https://www.veed.io/embed/e27935f3-f58d-46f8-b548-12bc45b08dd7')"
+            class="pictures hindiMovies">
+            <img class="img" src="thumbnail/ekthatiger.jpg" alt="Ek-Tha-Tiger" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ek-Tha-Tiger</h2>
+            <a href="https://www.veed.io/embed/e27935f3-f58d-46f8-b548-12bc45b08dd7" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Dream-Girl-2-->
+        <div onclick="watchmovie('https://www.veed.io/embed/aff0643b-adc2-4daf-a165-50bb6ca5b899')" class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Dream-Girl-2.jpg" alt="Dream-Girl-2" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dream-Girl-2</h2>
+            <a href="https://www.veed.io/embed/aff0643b-adc2-4daf-a165-50bb6ca5b899" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Thank-You-for-Coming-->
+        <div onclick="watchmovie(this)" class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Thank-You-for-Coming.jpg" alt="Thank-You-for-Coming" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Thank-You-for-Coming</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Dry-Day-->
+        <div onclick="watchmovie('https://www.veed.io/embed/989765d6-7c32-4163-addc-ed856d216941')"
+            class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Dry-Day.jpg" alt="Dry-Day" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dry-Day</h2>
+            <a href="https://www.veed.io/embed/989765d6-7c32-4163-addc-ed856d216941" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Tejas-->
+        <div onclick="watchmovie('https://www.veed.io/embed/42354964-1bfa-4c7e-9477-55a3e410254c')"
+            class="pictures actionthrillerMovies">
+            <img class="img" src="thumbnail/Tejas.jpg" alt="Tejas" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Tejas</h2>
+            <a href="https://www.veed.io/embed/42354964-1bfa-4c7e-9477-55a3e410254c" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Tiger-Zinda-Hai -->
+        <div onclick="watchmovie('https://www.veed.io/embed/36c28dc5-aa09-4f0a-a7ea-56e55ff0e150')"
+            class="pictures actionthrillerMovies">
+            <img class="img" src="thumbnail/Tiger-Zinda-Hai.jpg" alt="Tiger-Zinda-Hai" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Tiger-Zinda-Hai</h2>
+            <a href="https://www.veed.io/embed/36c28dc5-aa09-4f0a-a7ea-56e55ff0e150" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Apurva-->
+        <div onclick="watchmovie('https://www.veed.io/embed/ecfbce1b-b28d-49d3-93a7-55063cfb5402')"
+            class="pictures suspensefullMovies">
+            <img class="img" src="thumbnail/apurva.jpeg" alt="Apurva title=" Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Apurva</h2>
+            <a href="https://www.veed.io/embed/ecfbce1b-b28d-49d3-93a7-55063cfb5402" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Great-Indian-Family-->
+        <div onclick="watchmovie('https://www.veed.io/embed/08c247f5-5dc8-45ab-88af-d8f9d67f64dd')"
+            class="pictures hindiMovies">
+            <img class="img" src="thumbnail/Great-Indian-Family.jpg" alt="Great-Indian-Family" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Great-Indian-Family</h2>
+            <a href="https://www.veed.io/embed/08c247f5-5dc8-45ab-88af-d8f9d67f64dd" class="link"
+                style="display: none;"></a>
+        </div>
+
+
+        <!--Sooryavanshi-->
+        <div onclick="watchmovie('https://www.veed.io/embed/5f90a3bb-22f0-49e7-8e67-7b054324592a')"
+            class="pictures actionthrillerMovies">
+            <img class="img" src="thumbnail/Sooryavanshi.jpeg" alt="Sooryavanshi" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Sooryavanshi</h2>
+            <a href="https://www.veed.io/embed/5f90a3bb-22f0-49e7-8e67-7b054324592a" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--The-Vaccine-War-->
+        <div onclick="watchmovie('https://www.veed.io/embed/a8863491-a4f4-4f60-8499-6d7e58db74f5')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/The-Vaccine-War-(2023).jpg" alt="The-Vaccine-War" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">The-Vaccine-War</h2>
+            <a href="https://www.veed.io/embed/a8863491-a4f4-4f60-8499-6d7e58db74f5" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Farrey-->
+        <div onclick="watchmovie('https://www.veed.io/embed/766aba6f-5bb4-4a0d-8432-157fc23a1a75')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/Farrey.jpeg" alt="Farrey" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Farrey</h2>
+            <a href="https://www.veed.io/embed/766aba6f-5bb4-4a0d-8432-157fc23a1a75" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Sukhee-->
+        <div onclick="watchmovie('https://www.veed.io/embed/3149594a-88a5-48e8-ab5b-40f7ba3202b4')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/Sukhee.jpg" alt="Sukhee" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Sukhee</h2>
+            <a href="https://www.veed.io/embed/3149594a-88a5-48e8-ab5b-40f7ba3202b4" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Sajini-Shinde-Ka-Viral-Video-->
+        <div onclick="watchmovie(this)" class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Sajini-Shinde-Ka-Viral-Video.jpg" alt=" Sajini-Shinde-Ka-Viral-Video"
+                title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Sajini-Shinde-Ka-Viral-Video</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Bad-Boy-->
+        <div onclick="watchmovie('https://www.veed.io/embed/aff0643b-adc2-4daf-a165-50bb6ca5b899')" class="pictures actionthrillerMovies">
+            <img class="img" src="thumbnail/Bad-Boy.jpg" alt="Bad-Boy" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Bad-Boy</h2>
+            <a href="https://www.veed.io/embed/aff0643b-adc2-4daf-a165-50bb6ca5b899" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Khufiya-->
+        <div onclick="watchmovie('https://www.veed.io/embed/9195bd91-5512-4d30-a0ac-bca5790fee55')" class="pictures suspensefullMovies">
+            <img class="img" src="thumbnail/Khufiya.jpeg" alt="Khufiya" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Khufiya</h2>
+            <a href="https://www.veed.io/embed/9195bd91-5512-4d30-a0ac-bca5790fee55" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Dhak-Dhak-->
+        <div onclick="watchmovie('https://www.veed.io/embed/38242f31-b669-4c3f-9157-9c8ea4cbb3c9')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/Dhak-Dhak.jpg" alt="Dhak-Dhak" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dhak-Dhak</h2>w
+            <a href="https://www.veed.io/embed/38242f31-b669-4c3f-9157-9c8ea4cbb3c9" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Kho-Gaye-Hum-Kahan-->
+        <div onclick="watchmovie('https://www.veed.io/embed/9f8dcebb-6c59-4e86-be48-e62981a75799')" class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Kho-Gaye-Hum-Kahan.jpg" alt="Kho-Gaye-Hum-Kahan" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Kho-Gaye-Hum-Kahan</h2>
+            <a href="https://www.veed.io/embed/9f8dcebb-6c59-4e86-be48-e62981a75799" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Mast-Mein-Rehne-Ka-->
+        <div onclick="watchmovie('https://www.veed.io/embed/8966e92e-f813-497d-9b75-5240e553c18a')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/Mast-Mein-Rehne-Ka.jpg" alt="Mast-Mein-Rehne-Ka" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Mast-Mein-Rehne-Ka</h2>
+            <a href="https://www.veed.io/embed/8966e92e-f813-497d-9b75-5240e553c18a" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Minus-31-The-Nagpur-Files-->
+        <div onclick="watchmovie('https://www.veed.io/embed/689b03bb-2060-4304-aed7-b29cb4045a98')"
+            class="pictures suspensefullMovies">
+            <img class="img" src="thumbnail/Minus-31-The-Nagpur-Files.jpg" alt="Minus-31-The-Nagpur-Files"
+                title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Minus-31-The-Nagpur-Files</h2>
+            <a href="https://www.veed.io/embed/689b03bb-2060-4304-aed7-b29cb4045a98" class="link"
+                style="display: none;"></a>
+        </div>
+
+        
+
+        <!--Tumse-Na-Ho-Payega-->
+        <div onclick="watchmovie('https://www.veed.io/embed/7a85279d-ae2c-4100-ad00-8325aa0755f5')" class="pictures otherMovies">
+            <img class="img" src="thumbnail/Tumse-Na-Ho-Payega.jpg" alt="Tumse-Na-Ho-Payega" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Tumse-Na-Ho-Payega</h2>
+            <a href="https://www.veed.io/embed/7a85279d-ae2c-4100-ad00-8325aa0755f5" class="link" style="display: none;"></a>
+        </div>
+
+        <!---->
+        <div onclick="watchmovie('')" class="pictures otherMovies">
+            <img class="img" src="" alt="" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"></h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!---->
+        <div onclick="watchmovie(this)" class="pictures otherMovies">
+            <img class="img" src="" alt="" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"></h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Dono-->
+        <div onclick="watchmovie('https://www.veed.io/embed/cee67f33-7a7b-4906-be73-cf9d3c683d3b')"
+            class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Dono.jpeg" alt="Dono" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dono</h2>
+            <a href="https://www.veed.io/embed/cee67f33-7a7b-4906-be73-cf9d3c683d3b" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Sanju-->
+        <div onclick="watchmovie('https://www.veed.io/embed/21fb1266-a10e-4a4c-94f9-6f6947a093bb')"
+            class="pictures hindiMovies ">
+            <img class="img" src="thumbnail/Sanju-(2018).jpg" alt="Sanju" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Sanju</h2>
+            <a href="https://www.veed.io/embed/21fb1266-a10e-4a4c-94f9-6f6947a093bb" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Ittu-Si-Baat-->
+        <div onclick="watchmovie('https://www.veed.io/embed/094068ee-8328-47b2-b41c-ba4705642fbe')"
+            class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Ittu-Si-Baat.jpeg" alt="Ittu-Si-Baat" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ittu-Si-Baat</h2>
+            <a href="https://www.veed.io/embed/094068ee-8328-47b2-b41c-ba4705642fbe" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Sonu-Ke-Titu-Ki-Sweety-->
+        <div onclick="watchmovie('https://www.veed.io/embed/145db544-f80f-4268-bc9f-50807ebd7197')"
+            class="pictures romanticmovies">
+            <img class="img" src="thumbnail/Sonu-Ke-Titu-Ki-Sweety.jpg" alt="Sonu-Ke-Titu-Ki-Sweety"
+                title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Sonu-Ke-Titu-Ki-Sweety</h2>
+            <a href="https://www.veed.io/embed/145db544-f80f-4268-bc9f-50807ebd7197" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Ghoomer-->
+        <div onclick="watchmovie('https://www.veed.io/embed/24b06050-7ab0-4269-aff1-e41df6a6a887')"
+            class="pictures southindian ">
+            <img class="img" src="thumbnail/ghoomer.jpg" alt="Ghoomer" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ghoomer</h2>
+            <a href="https://www.veed.io/embed/24b06050-7ab0-4269-aff1-e41df6a6a887" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Ms-Dhoni-The-Untold-Story-->
+        <div onclick="watchmovie('https://www.veed.io/embed/fcc32e4b-59fa-4742-98be-f9a4c37a6eed')"
+            class="pictures hindiMovies ">
+            <img class="img" src="thumbnail/ms-dhoni.jpg" alt="Ms-Dhoni-The-Untold-Story" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ms-Dhoni-The-Untold-Story</h2>
+            <a href="https://www.veed.io/embed/fcc32e4b-59fa-4742-98be-f9a4c37a6eed" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Hi-Papa - Bollywood -->
+        <div onclick="watchmovie('https://www.veed.io/embed/f7ddc17a-1c1e-4731-b265-72c73586d001')"
+            class="pictures comedyMovies s">
+            <img class="img" src="thumbnail/Hi-Papa.jpg" alt="Hi-Papa" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Hi-Papa </h2>
+            <a href="https://www.veed.io/embed/f7ddc17a-1c1e-4731-b265-72c73586d001" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- Kadak-Singh - Bollywood -->
+        <div class="pictures bollywood otherMovies" onclick="watchmovie('https://www.veed.io/embed/f3374b35-b085-4b96-af08-b75a54d51243')">
+            <img class="img" src="thumbnail/Kadak-Singh.jpg" alt="Kadak Singh" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Kadak-Singh</h2>
+            <a href="https://www.veed.io/embed/f3374b35-b085-4b96-af08-b75a54d51243" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!--Yes-Boss -->
+        <div onclick="watchmovie('https://www.veed.io/embed/f69cd6ff-8fd9-46c3-ab78-98898c762022')"
+            class="pictures hindiMovies">
+            <img class="img" src="thumbnail/yes boss.jpg" alt="Yes-Boss" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Yes-Boss</h2>
+            <a href="https://www.veed.io/embed/f69cd6ff-8fd9-46c3-ab78-98898c762022" class="link"
+                style="display: none;"></a>
+        </div>
+
+        <!-- RRR -->
+        <div onclick="watchmovie(this)" class="pictures southindian ">
+            <img class="img" src="thumbnail/rrr.jpg" alt="RRR" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"> RRR</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Bellbottom -->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies ">
+            <img class="img" src="thumbnail/bellbottom.jpg" alt="Bellbottom" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Bellbottom</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Bhoot-Police -->
+        <div onclick="watchmovie(this)" class="pictures horrorMovies">
+            <img class="img" src="thumbnail/bhoot police.jpg" alt="Bhoot-Police" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Bhoot-Police</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Bramhstra-->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies">
+            <img class="img" src="thumbnail/bramhstra.jpg" alt="Bramhstra" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Bramhstra</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Dasara -->
+        <div onclick="watchmovie(this)" class="pictures southindian">
+            <img class="img" src="thumbnail/dasara.jpg" alt="Dasara" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dasara</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Dharama-Bhai -->
+        <div onclick="watchmovie(this)" class="pictures southindian">
+            <img class="img" src="thumbnail/dharamabhai.jpg" alt="Dharama-Bhai" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Dharama-Bhai</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Diljale -->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies">
+            <img class="img" src="thumbnail/diljale.jpg" alt="Diljale" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Diljale</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Ganapath -->
+        <div onclick="watchmovie(this)" class="pictures suspensefullMovies ">
+            <img class="img" src="thumbnail/ganapath.jpg" alt="Ganapath" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ganapath</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Heropanti -->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies">
+            <img class="img" src="thumbnail/heropanti.jpg" alt="Heropanti" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Heropanti</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Jailer -->
+        <div onclick="watchmovie(this)" class="pictures actionthrillerMovies ">
+            <img class="img" src="thumbnail/jailer.jpg" alt="Jailer" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Jailer </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- killer -->
+        <div onclick="watchmovie(this)" class="pictures suspensefullMovies ">
+            <img class="img" src="thumbnail/Killer.jpg" alt="killer" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Killer </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- krish -->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies ">
+            <img class="img" src="thumbnail/krish.jpg" alt="krish" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">krish </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Tevar-->
+        <div onclick="watchmovie(this)" class="pictures southindian ">
+            <img class="img" src="thumbnail/tevar.jpg" alt="Tevar" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Tevar </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Pathaan -->
+        <div onclick="watchmovie(this)" class="pictures actionthrillerMovies ">
+            <img class="img" src="thumbnail/pathaan.jpg" alt="Pathaan" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"> Pathaan</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- kahani -->
+        <div onclick="watchmovie(this)" class="pictures suspensefullMovies  ">
+            <img class="img" src="thumbnail/kahani.jpg" alt="kahani" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">kahani </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Kabzaa -->
+        <div onclick="watchmovie(this)" class="pictures actionthrillerMovies ">
+            <img class="img" src="thumbnail/kabzaa.jpg" alt="Kabzaa" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Kabzaa </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Ratsasan -->
+        <div onclick="watchmovie(this)" class="pictures actionthrillerMovies ">
+            <img class="img" src="thumbnail/ratsasan.jpg" alt="Ratsasan" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text"> Ratsasan</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Eagle  -->
+        <div onclick="watchmovie(this)" class="pictures actionthrillerMovies ">
+            <img class="img" src="thumbnail/eagle.jpg" alt="Eagle" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Eagle </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Talktome  -->
+        <div onclick="watchmovie(this)" class="pictures horrorMovies ">
+            <img class="img" src="thumbnail/Talktome.jpg" alt="Talktome" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Talktome </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- ScreamVI  -->
+        <div onclick="watchmovie(this)" class="pictures horrorMovies ">
+            <img class="img" src="thumbnail/ScreamVI.jpg" alt="ScreamVI" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Scream-VI </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Indian Jones - Hollywood -->
+        <div onclick="watchmovie(this)" class="pictures suspensefullMovies">
+            <img class="img" src="thumbnail/Indianajones.jpg" alt="Indian Jones" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Indian-Jones </h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+
+        <!--Hauntinginvenice - Hollywood -->
+        <div onclick="watchmovie(this)" class="pictures horrorMovies">
+            <img class="img" src="thumbnail/Hauntinginvenice.jpg" alt="Haunting in Venice" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Haunting-Invenice</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Evildeadrise - Hollywood -->
+        <div onclick="watchmovie(this)" class="pictures hollywood horrorMovies">
+            <img class="img" src="thumbnail/Evildeadrise.jpg" alt="Evil Dead Rise" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Evil-Dead-Rise</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Do-Ajnabee - Bollywood -->
+        <div onclick="watchmovie(this)" class="pictures bollywood suspensefullMovies">
+            <img class="img" src="thumbnail/Do-Ajnabee.jpg" alt="Do Ajnabee" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Do-Ajnabee</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+
+
+        <!--Kastoori - Bollywood -->
+        <div onclick="watchmovie(this)" class="pictures bollywood otherMovies">
+            <img class="img" src="thumbnail/Kastoori.jpg" alt="Kastoori" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Kastoori</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Yaatris - Bollywood -->
+        <div onclick="watchmovie(this)" class="pictures bollywood comedyMovies">
+            <img class="img" src="thumbnail/Yaatris.jpg" alt="Yaatris" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Yaatris</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Napoleon - Bollywood -->
+        <div onclick="watchmovie(this)" class="pictures bollywood otherMovies">
+            <img class="img" src="thumbnail/Napoleon.jpg" alt="Napoleon" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Napoleon</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Anari-Is-Back - Bollywood -->
+        <div onclick="watchmovie(this)" class="pictures bollywood comedyMovies">
+            <img class="img" src="thumbnail/Anari-Is-Back.jpg" alt="Anari Is Back" title="Click to watch"
+                loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Anari-Is-Back</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!--Antman - Hollywood -->
+        <div onclick="watchmovie(this)" class="pictures hollywood actionthrillerMovies">
+            <img class="img" src="thumbnail/Antman.jpg" alt="Antman" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Antman</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        <!-- Ramleela -->
+        <div onclick="watchmovie(this)" class="pictures hindiMovies">
+            <img class="img" src="thumbnail/ramleela.jpg" alt="Ramleela" title="Click to watch" loading="lazy">
+            <!-- for play button -->
+            <a class='bx bx-play-circle play-btn'></a>
+            <h2 class="text">Ramleela</h2>
+            <a href="hellow" class="link" style="display: none;"></a>
+        </div>
+
+        
+
+    </main>
+
+
+    <!-- link script -->
+    <!-- <script src="./movie.js"></script> -->
+    <script src="./lessjava.js"></script>
+
+
+
+
+</body>
+
+</html>

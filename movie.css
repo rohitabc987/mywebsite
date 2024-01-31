@@ -1,0 +1,663 @@
+
+
+body{
+    background-color: rgb(8, 1, 1);
+}
+
+/*title*/
+/* >>> */
+.title {
+    color: rgb(255, 17, 0);
+    font-style: italic;
+    font-style: serif;
+    font-size: 35px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+
+
+/* navigation */
+/* >>> */
+.navbar{
+    display:flex;  
+    flex-wrap: wrap;
+    background-color: none;
+    /* justify-content: space-between; */
+    /* gap: auto; */
+   
+}
+
+.navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: auto;
+    justify-content: space-between;
+    padding-inline-start: 5px;
+}
+
+/* nav element */
+.navbar li{
+    display: inline-block;
+    list-style: none;
+    padding: 2px 8px;
+    margin: 4px 3px;
+    transition: 0.6s;
+    /* transform: 5px; */
+    font-style: oblique;   
+    font-size: 20px;
+}  
+
+.active{
+    background-color: rgb(35, 246, 7);
+    padding: 2px 8px;
+    border-radius: 10px;
+    /* align-self: ; */
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover{
+    background-color: rgb(35, 246, 7);
+    padding: 3px 8px;
+    border-radius: 10px;
+    transform: 200%;
+    transition: all ease 0.3s;
+}
+
+
+
+/* class of whole search bar */
+.form{
+    padding: 22px;
+    margin-right: 25px;
+    position: relative; 
+}
+
+.form input{
+    border: 4px solid rgb(243, 22, 22);
+    border-radius: 20px;
+    width: 200px;
+    height: 22px;
+    /* padding-left: 28px; */
+    padding: 0px 30px;
+    position: relative;
+    top: -5%;
+}
+
+/* For searh  and mike icon*/
+.search_icon,.mike_icon {
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+/*  for search icon */
+.search_icon{
+    top: 37.5%;
+    left: 33px;
+    font-size: 17.5px;
+}
+
+/* for mike icon */
+.mike_icon{
+    top: 25px;
+    right: 30px;
+    font-size: 23px;
+}
+
+
+/* .list1{
+    color: white;
+    font-size: 18px;
+    font-style: oblique;   
+    margin-left: 10px;
+
+} */
+
+
+/* CSS for Slideshow Container */
+/* >>> */
+
+#show{
+    display: box;
+}
+
+.mySlides {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 35vw;
+    /* height: 25vw; */
+    clip-path: polygon(0 0, 100% 0, 68% 110%, 0% 100%); 
+    border-radius: 50%;
+    background-color: black;
+}
+  
+/* image width of slide-show */
+.slide {
+    height: 20vw;
+    width: 42vh;
+    animation: slideRightToLeft 1.0s ease-in-out forwards;
+    transition: transform 0.4s ease-in-out;  
+}
+
+
+/* Keyframes for Sliding Animation */
+@keyframes slideRightToLeft {
+    from {
+      transform: translateX(5%);
+    }
+    to {
+      transform: translateX(-5%);
+    }
+}
+
+/* Reduce brightness to 40% */
+.slide:hover{
+    opacity: 0.6;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;  
+  }
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Styling for the button */
+.slide-button {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    left: 45%; 
+    transform: translateX(-50%);
+    text-align: center; 
+   
+}
+
+/* watch button of automatic slider */
+.watch-button {
+    padding: 5px 10px; 
+    background-color: rgb(209, 236, 8);
+    color: black; 
+    border: none; 
+    border-radius: 5px; 
+     font-size: 16px; 
+     cursor: pointer; 
+     transform: skewX(-20deg);
+     transition: background-color 0.3s ease;
+}
+
+/* watch button link */
+.watch-button a{
+    text-decoration: none;
+}
+
+/* when watch buttun is hover */
+.watch-button:hover {
+    background-color: rgb(0, 153, 204);
+}
+
+
+
+/* background image of top part  */
+.top {
+    position: sticky;
+    z-index: 1000;
+    background-image: url("netflixhd.jpg");
+    /* background-image: url("movieback.jpeg");  */
+    background-color: black;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+  }
+
+  
+
+/* main content list of  catogorised movies description*/
+/* >>> */
+.main{
+    background-image: linear-gradient( to right ,black, rgb(100, 74, 48),black);   
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content:space-around; */
+}
+
+
+
+/* list of diffrent catogorised movies */
+.listofmovies{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-inline-start: 0px;
+    justify-content: space-between;
+}
+
+.diffrent-list{
+    position: relative;
+}
+
+/* movies in any single catogory */
+.movies-list{
+    display: flex;
+    gap: 30px;
+    flex-direction: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.movies-list::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+/* name of catogorised movie */
+.listname{
+    display: block;
+    color: white;
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+/*container of arrow  */
+.arrow_container {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    /* background-color: red; */
+    background: linear-gradient(to top , transparent , black , transparent );
+    height: 95%;
+    width: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* arrow for moving movies */
+.right_arrow, .left_arrow{
+    position: absolute;
+    font-size: 30px;
+    right: -5%;
+    color: white;
+    font-size: 45px;
+    z-index: 2;
+}
+
+.right_arrow{
+    top: 50%;
+}
+
+.left_arrow{
+    display: none;
+    top: 30%;
+}
+
+
+.search_available_movies{
+    margin-top: 10px; /* change  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#related_movie_container{
+    position: relative;
+}
+
+/* show movies in 1 row   */
+.show_related_movies {
+    display: flex;
+    gap: 30px;
+    flex-direction: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    /* position: relative; */
+}
+
+.show_related_movies::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in(Chrome, Safari, etc.) */
+}
+
+/* contianer of live watching movie */
+.watch_movie_container{
+    margin-top: 5px;
+    margin-left: 2vw;
+    text-align: center;
+    width: 63vw;
+    aspect-ratio: 2/1.025;
+    position: relative;
+    animation-name: createBox;
+    animation-duration: 1s;
+}
+
+@keyframes createBox{
+    from{
+        height:0px;
+        width: 0px;
+
+    }
+    to{
+        height: 98px;
+        width: 98px;
+    }
+}
+
+
+/* watching movie */
+.watch_movie_container iframe{
+    margin-left: 0px;
+    width: 100%;
+    height: 100%; 
+}
+
+/* name of website at bottom */
+.website_name_in_watching_movies{
+    position: absolute;
+    right: 9%;
+    font-size: 18px;
+    color: white;
+    bottom: -0.5%;
+    background-image: radial-gradient(red 40%, transparent 90%);
+    padding: 6px 7px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.icon_container{
+    background: linear-gradient(to right , transparent, rgb(48, 38, 38), transparent);
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    gap: 10px;
+    padding: 5px 5px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
+/* share button in watching movie*/
+.sharebutton ,.delete_button{
+    /* position: absolute; */
+    color: white;
+    font-size: 28px;
+    z-index: 10000;
+}
+
+/* class of present movie and its name */
+.pictures{
+    display: none;
+    position: relative;
+    flex: 0 0 auto; 
+    /* margin-right: 40px; */
+}
+
+/* images of movies */
+.img{
+    height: 230px;
+    width: 160px;
+    border-radius: 8%;
+    transition: transform 0.4s ease-in-out;
+    /* transform-origin: top; */
+    z-index: 1;
+}
+
+/* text of the movie */
+.text{
+    font-size: 15px;
+    text-align: center;
+    margin: 0px;
+    max-width: 200px;
+    color: white; 
+    transition: transform 0.4s ease-in-out;
+}
+
+/* image tranformation */
+.pictures:hover .img {
+    transform: scale(1.1); 
+    transform-origin: top ;
+    opacity: 0.4;
+}
+
+
+/* text transition  */
+.pictures:hover .text{
+    transform: scale(1.12);
+    transform-origin: top ;
+    color: red;
+} 
+
+.pictures:hover .play-btn{
+    display: block;
+    text-decoration: none;
+}
+
+.pictures:hover .show_moviename{
+    display: block;
+    text-decoration: none;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    transition: all 0.3s ease;
+    display: none;  
+}
+
+
+
+/* if movie not found */
+/* >>> */
+
+/* message box */
+.message{
+    color: white;
+    text-align: center;  
+    font-size: 25px;
+    margin-top: 60px;
+}
+
+/* refresh button */
+.refresh {
+    display: flex;
+    justify-content: center;
+}
+
+/* movie not found button */
+.refresh button {
+    margin-top: 40px;
+    text-align: center;
+    background-color: rgb(8, 205, 236);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    font-size: 20px; 
+    border-color: black;
+    margin-bottom: 20px;
+}
+
+/* related movies list */
+.relatedMovies{
+    margin-top: 1000px;
+
+}
+
+
+/* dont show image slide for low screen size in desktop */
+@media (max-width: 823px)
+{
+    #show{
+        display: none;
+    }
+}
+
+
+
+/*  for mobile phone */
+/* >>> */
+@media screen and (max-width: 750px) {
+
+    /* title */
+    .title{
+        font-size: 25px;
+        margin-bottom: 0px;
+        margin-left: 8px;
+        margin-top: 0px;
+    }
+    
+    .left{
+       margin-top: -5px;
+       margin-bottom: -10px;
+    }
+
+    /* navbar */
+    .navbar li{ 
+        display: flex;
+        padding: 2px 2px;
+        /* transition: 0.6s; */
+        font-size: 15px;
+    }  
+    
+    /* for input in search */
+    .navbar input {
+        width: 250PX; 
+        height: 25px; 
+    }
+
+    .form{
+        padding: 0px;
+        margin-left: 6px;
+        margin-bottom: 15px;
+    }
+
+    /*  for search icon */
+    .search_icon{
+        top: 5px;
+        left: 13px;
+        font-size: 18px;
+    }
+
+    /* for mike icon */
+    .mike_icon{
+        top: 2px;
+        right: 10px;
+        font-size: 24px;
+    }
+
+    /* reset button */
+    .reset{  
+        margin-top: 5px;
+    }
+
+    /* dont show image slider.  */
+    #show{
+        display: none;
+    }
+
+    .arrow_container{
+        width: 30px;
+    }
+
+    .right_arrow, .left_arrow{
+        position: absolute;
+        right:-20% ;
+    }
+
+    .watch_movie_container{
+        width: 94vw;
+        height: 80vw;
+    }
+
+    .website_name_in_watching_movies{
+        position: absolute;
+        right: 12.5%;
+        bottom: -3%;
+        padding: 9px 2px;
+        font-size:15px ;
+    }
+    
+    /* share button in watching movie*/
+    .sharebutton ,.delete_button{
+        font-size: 20px;
+    }
+
+    /* movie catogory name */
+    .listname{
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+
+    
+    /* list of all catogories */
+    .listofmovies{
+        gap: 0px;
+    }
+
+    /* movies in one catogory */
+    .movies-list{
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .img{
+        height: 180px;
+        width: 120px; 
+    }
+    
+    /* text of the movie */
+    .text{
+        font-size: 13px;
+        max-width: 130px;
+    }
+
+    /* message box , movies not found */
+    .message{
+        font-size: 18px;
+    }
+
+    .top{
+        /* position: fixed; */
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* message box */
+    .message{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    /* refresh button */
+    .refresh button {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+
+    .show_related_movies{
+        gap: 8px;
+        /* justify-content: space-around; */
+    }
+   
+}
+
+
